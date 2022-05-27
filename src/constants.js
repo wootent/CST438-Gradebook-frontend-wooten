@@ -1,1 +1,1 @@
-export const SERVER_URL = 'https://cst438gradebe-wooten.herokuapp.com';
+export const SERVER_URL = ' https://cst438-gradebe-wooten.herokuapp.com/';
