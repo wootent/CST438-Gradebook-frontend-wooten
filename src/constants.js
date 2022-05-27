@@ -1,1 +1,1 @@
-export const SERVER_URL = 'http://localhost:8081';
+export const SERVER_URL = 'https://cst438gradebe-wooten.herokuapp.com';
