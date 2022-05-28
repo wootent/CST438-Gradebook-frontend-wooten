@@ -64,7 +64,7 @@ class Assignment extends React.Component {
             toast.success("Assignment Created Successfully ", {
             position: toast.POSITION.BOTTOM_LEFT
             });
-            this.fetchAssignments();
+            //this.fetchAssignments();
           } else {
             toast.error("Create Assignment failed", {
             position: toast.POSITION.BOTTOM_LEFT
@@ -147,7 +147,7 @@ class Assignment extends React.Component {
                 <input type="number" id="courseId" name="courseId" onChange={this.onCourseIdChange}></input><br></br>
               </div>
               <div align="center">
-                <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleCreate}  >
+                <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleCreate} to={{pathname:'/gradebook',   assignment: assignmentSelected }}  >
                    Create Assignment
                 </Button>
               </div>                              
