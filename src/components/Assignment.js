@@ -131,7 +131,7 @@ class Assignment extends React.Component {
                 <DataGrid rows={this.state.assignments} columns={columns} />
               </div>
               <div>
-              	<Button component={Link} to={{pathname:'/gradebook',   assignment: assignmentSelected }} 
+              	<Button id="grade" component={Link} to={{pathname:'/gradebook', assignment: assignmentSelected }} 
               		variant="outlined" color="primary" disabled={this.state.assignments.length===0}  style={{margin: 10}}>
               	Grade
               	</Button>
@@ -147,7 +147,7 @@ class Assignment extends React.Component {
                 <input type="number" id="courseId" name="courseId" onChange={this.onCourseIdChange}></input><br></br>
               </div>
               <div align="center">
-                <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleCreate} >
+                <Button id="submit" variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleCreate} >
                    Create Assignment
                 </Button>
               </div>                              
