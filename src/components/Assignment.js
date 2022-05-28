@@ -64,7 +64,8 @@ class Assignment extends React.Component {
             toast.success("Assignment Created Successfully ", {
             position: toast.POSITION.BOTTOM_LEFT
             });
-            this.fetchAssignments();
+            fetch(`${SERVER_URL}/gradebook` //test
+            // this.fetchAssignments();
           } else {
             toast.error("Create Assignment failed", {
             position: toast.POSITION.BOTTOM_LEFT
