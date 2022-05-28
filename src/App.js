@@ -18,7 +18,7 @@ function App() {
       </AppBar>
       <BrowserRouter>
        <Switch>
-        <Route exact path='/' component={Assigment} />
+        <Route exact path='/' component={Assignment} />
         <Route path='/gradebook' component={Gradebook} />
        </Switch>
       </BrowserRouter>
