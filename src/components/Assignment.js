@@ -64,7 +64,8 @@ class Assignment extends React.Component {
             toast.success("Assignment Created Successfully ", {
             position: toast.POSITION.BOTTOM_LEFT
             });
-            this.fetchAssignments();
+            // this.fetchAssignments();
+            this.fetchGrades();
           } else {
             toast.error("Create Assignment failed", {
             position: toast.POSITION.BOTTOM_LEFT
@@ -77,7 +78,38 @@ class Assignment extends React.Component {
           });
           console.error(err);
         });
-   };        
+   };
+   
+   fetchGrades = () => {
+    console.log("Gradebook.fetchGrades");
+    const token = Cookies.get('XSRF-TOKEN');
+    fetch(`${SERVER_URL}/gradebook/${this.props.location.assignment.assignmentId}`, 
+      {  
+        method: 'GET', 
+        headers: { 'X-XSRF-TOKEN': token }
+      } )
+    .then((response) => response.json()) 
+    .then((responseData) => { 
+      if (Array.isArray(responseData.grades)) {
+        // add attribute "id" to each row. Required for DataGrid,  id is index of row (i.e. 0, 1, 2, ...)  
+        this.setState({ 
+          grades: responseData.grades.map((r,index) => {
+                return {id:index, ...r};
+          })
+        });
+      } else {
+        toast.error("Fetch failed.", {
+          position: toast.POSITION.BOTTOM_LEFT
+        });
+      }        
+    })
+    .catch(err => {
+      toast.error("Fetch failed.", {
+          position: toast.POSITION.BOTTOM_LEFT
+        });
+        console.error(err); 
+    })
+  }
   
    onRadioClick = (event) => {
     console.log("Assignment.onRadioClick " + event.target.value);
