@@ -57,8 +57,8 @@ class Gradebook extends React.Component {
           console.error(err); 
       })
     }
-  
-    // when submit button pressed, send updated grades to back end 
+
+// when submit button pressed, send updated grades to back end 
     //  and then fetch the new grades.
     handleSubmit = ( ) => {
       console.log("Gradebook.handleSubmit");
