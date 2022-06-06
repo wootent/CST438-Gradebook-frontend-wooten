@@ -137,7 +137,7 @@ class Assignment extends React.Component {
               	</Button>
                 <hr></hr>
               </div>
-              <div align="center">
+              <div align="center" id="addAssignment">
                 <h3>Create Assigments</h3>
                 <label for="assignmentName">Name: </label>
                 <input type="text" id="assignmentName" name="assignmentName" onChange={this.onNameChange}></input><br></br>
