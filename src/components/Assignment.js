@@ -147,7 +147,7 @@ class Assignment extends React.Component {
                 <input type="number" id="courseId" name="courseId" onChange={this.onCourseIdChange}></input><br></br>
               </div>
               <div align="center">
-                <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleCreate} >
+                <Button id="btnAdd" variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleCreate} >
                    Create Assignment
                 </Button>
               </div>                              
